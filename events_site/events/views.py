@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Event
 
 events = [
     {
@@ -20,7 +21,7 @@ events = [
 
 def home(request):
     context = {
-        'events': events
+        'events': Event.objects.all()
     }
     return render(request, 'events/home.html', context)
 
