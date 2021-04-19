@@ -6,11 +6,9 @@ from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == 'POST':
-        print(request.POST)
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            # form.save()
-            print(form.cleaned_data)
+            form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created, you are now able to log in!')
             return redirect('login')
