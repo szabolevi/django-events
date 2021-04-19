@@ -21,4 +21,4 @@ $ python manage.py makemigrations
 ```bash
 $ python manage.py runserver
 ```
-### - Then you can register a user, log in ad start creating, updating and deleting events.
+### - Then you can register a user, log in and start creating, updating and deleting events.
