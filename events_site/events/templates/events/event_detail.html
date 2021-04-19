@@ -1,0 +1,18 @@
+{% extends "events/base.html" %}
+{% block content %}
+    <h1>Event Details</h1>
+      <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <h4>Event by <a class="mr-2" href="#">{{event.organizer}}</a></h4>
+          </div>
+          <h3 class="article-title">{{event.title}}</h3>
+          <p class="article-content">{{event.description}}</p>
+          <small class="text-muted">{{event.start_date}} - {{event.end_date}}</small>
+          {% if object.organizer == user%}
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'events-update' object.id%}">Update Event</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'events-delete' object.id%}">Delete Event</a>
+          {% endif %}
+        </div>
+      </article>
+{% endblock content %}

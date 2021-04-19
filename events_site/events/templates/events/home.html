@@ -7,7 +7,7 @@
             <div class="article-metadata">
               <h4>Event by <a class="mr-2" href="#">{{event.organizer}}</a></h4>
             </div>
-            <h3><a class="article-title" href="#">{{event.title}}</a></h3>
+            <h3><a class="article-title" href="{% url 'events-detail' event.id%}">{{event.title}}</a></h3>
             <p class="article-content">{{event.description}}</p>
             <small class="text-muted">{{event.start_date}} - {{event.end_date}}</small>
           </div>
